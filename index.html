@@ -4,26 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Vamos al Cirque du Soleil!</title>
+    <title>Una Noche Mágica</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="content">
-            <h1>🎪 ¡Una Noche Mágica en el Cirque du Soleil! 🎪</h1>
-            <p>He estado pensando en hacer algo especial contigo, y no se me ocurre nada mejor que disfrutar de una noche llena de magia, acrobacias y emociones en el Cirque du Soleil. ¿Te gustaría acompañarme?</p>
-            <button id="acceptBtn">¡Sí, vamos!</button>
-            <button id="declineBtn">No puedo 😢</button>
+        <div class="invitation-card">
+            <h1 class="title">✨ Una Noche Mágica ✨</h1>
+            <p class="message">Quiero invitarte a vivir una experiencia inolvidable en el Cirque du Soleil conmigo.</p>
+            <p class="sub-message">Una noche llena de magia, acrobacias y emoción nos espera.</p>
+            <div class="buttons">
+                <button class="btn yes-btn" onclick="window.location.href='celebracion.html'">¡Claro que sí!</button>
+                <button class="btn no-btn" onclick="alert('¡Espero podamos ir otra vez!')">Otra vez será...</button>
+            </div>
         </div>
     </div>
-
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span id="closeModal" class="close">&times;</span>
-            <p id="modalMessage"></p>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>

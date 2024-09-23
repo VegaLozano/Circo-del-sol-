@@ -1,171 +1,123 @@
+/* Estilos generales */
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #f9a8d4, #8ecae6);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #333;
+    background: linear-gradient(135deg, #1f4068, #1b1b2f);
     overflow: hidden;
 }
 
-.celebration {
+.container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    position: relative;
+    height: 100vh;
 }
 
-h1 {
+.invitation-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.title {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #ffd700; /* Color dorado */
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
-p {
+.message {
     font-size: 1.2rem;
-    margin-bottom: 30px;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
 }
 
-.close-video {
+.sub-message {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #d4d4d4;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn {
     padding: 10px 20px;
-    background-color: #ef476f;
-    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    transition: transform 0.3s;
+    transition: all 0.3s ease;
 }
 
-.close-video:hover {
-    background-color: #c42b4b;
+.yes-btn {
+    background-color: #06d6a0;
+    color: #1b1b2f;
+}
+
+.yes-btn:hover {
+    background-color: #05c58b;
     transform: scale(1.1);
 }
 
-/* Confetti */
-.confetti {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: -1;
+.no-btn {
+    background-color: #ef476f;
+    color: #ffffff;
 }
 
-.confetti::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://media.giphy.com/media/3o6ozl6U25wYE8pK7m/giphy.gif');
-    background-size: cover;
-    opacity: 0.7;
+.no-btn:hover {
+    background-color: #d73555;
+    transform: scale(1.1);
 }
 
-/* Stars */
-.stars {
-    position: absolute;
+/* Celebración */
+.celebration-overlay {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: transparent;
-    pointer-events: none;
-}
-
-.stars::before, .stars::after {
-    content: '';
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-    animation: twinkling 2s infinite alternate ease-in-out;
-}
-
-.stars::before {
-    top: 20%;
-    left: 30%;
-}
-
-.stars::after {
-    top: 70%;
-    left: 60%;
-}
-
-@keyframes twinkling {
-    0% { opacity: 0.3; transform: scale(1); }
-    100% { opacity: 1; transform: scale(1.5); }
-}
-
-/* Balloons */
-.balloons {
-    position: absolute;
-    bottom: -100px;
-    left: 50%;
-    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.85);
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+    animation: fadeIn 1s ease-in-out;
 }
 
-.balloon {
-    width: 50px;
-    height: 70px;
-    border-radius: 50% 50% 50% 50% / 60% 60% 100% 100%;
-    background-color: #f94144;
-    position: relative;
-    animation: float 6s ease-in-out infinite;
+.celebration-content {
+    text-align: center;
+    color: #ffd700;
 }
 
-.balloon1 {
-    background-color: #f3722c;
-    animation-duration: 5s;
+.celebration-title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
 }
 
-.balloon2 {
-    background-color: #f9c74f;
-    animation-duration: 7s;
+.celebration-message {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 20px;
 }
 
-.balloon3 {
-    background-color: #90be6d;
-    animation-duration: 6s;
-}
-
-.balloon::before {
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 60px;
-    background: white;
-    bottom: -60px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-@keyframes float {
-    0% {
-        transform: translateX(-10px) translateY(0) rotate(-2deg);
-    }
-    50% {
-        transform: translateX(10px) translateY(-20px) rotate(2deg);
-    }
-    100% {
-        transform: translateX(-10px) translateY(0) rotate(-2deg);
-    }
-}
+.back-btn {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #06d6a0;
+    color: #1b1b2f;
+    border
